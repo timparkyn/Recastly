@@ -21,3 +21,4 @@ var App = () => (
 window.App = App;
 
 //
+ //         <VideoList videos={window.exampleVideoData}/>
