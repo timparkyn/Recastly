@@ -26,6 +26,24 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getYouTubeVideos('cute kittens')
+  }
+
+  getYouTubeVideos(query) {
+    var options = {
+      key: this.props.API_KEY,
+      query: query
+    }
+
+    this.props.searchYouTube(options, (videos) => {
+      this.setState({
+        videos: videos,
+        currentVideo: videos[0]
+      });
+    });
+  }
+
   handleVideoListEntryTitleClick(video) {
     this.setState({
       currentVideo: video
